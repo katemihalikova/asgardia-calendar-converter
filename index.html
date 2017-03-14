@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Asgardia Calendar Converter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: black;
+        color: white;
+      }
+      div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+        -webkit-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        transform: translateY(50%);
+      }
+      table {
+        margin: auto;
+      }
+      td {
+        text-align: center;
+      }
+      input, select {
+        border: 1px solid black;
+        height: 20px;
+        text-align: center;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <th></th>
+          <th>Day</th>
+          <th>Month</th>
+          <th>Year</th>
+          <th style="width: 90px;">Weekday</th>
+        </tr>
+        <tr>
+          <th style="text-align: right;">Gregorian:</th>
+          <td>
+            <select id="gre_d" style="width: 45px;">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+              <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+              <option>26</option><option>27</option><option>28</option>
+              <option id="gre_29">29</option><option id="gre_30">30</option><option id="gre_31">31</option>
+            </select>
+          </td>
+          <td>
+            <select id="gre_m">
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Jul</option>
+              <option value="8">Aug</option>
+              <option value="9">Sep</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+          </td>
+          <td>
+            <input id="gre_y" type="number" step="1" style="width: 60px;">
+          </td>
+          <td id="gre_w"></td>
+        <tr>
+        </tr>
+          <th style="text-align: right;">Asgardian (Leap Day on 29 Feb):</th>
+          <td>
+            <select id="feb_d" style="width: 45px;">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+              <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+              <option>26</option><option>27</option><option>28</option>
+              <option id="feb_l" value="29-2">LD</option>
+              <option id="feb_13" value="29-13">YD</option>
+            </select>
+          </td>
+          <td>
+            <select id="feb_m">
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Asg</option>
+              <option value="8">Jul</option>
+              <option value="9">Aug</option>
+              <option value="10">Sep</option>
+              <option value="11">Oct</option>
+              <option value="12">Nov</option>
+              <option value="13">Dec</option>
+            </select>
+          </td>
+          <td>
+            <input id="feb_y" type="number" step="1" style="width: 60px;">
+          </td>
+          <td id="feb_w"></td>
+        </tr>
+        <tr>
+          <th style="text-align: right;">Asgardian (Leap Day on 29 Jun):</th>
+          <td>
+            <select id="jun_d" style="width: 45px;">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+              <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+              <option>26</option><option>27</option><option>28</option>
+              <option id="jun_l" value="29-6">LD</option>
+              <option id="jun_13" value="29-13">YD</option>
+            </select>
+          </td>
+          <td>
+            <select id="jun_m">
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Asg</option>
+              <option value="8">Jul</option>
+              <option value="9">Aug</option>
+              <option value="10">Sep</option>
+              <option value="11">Oct</option>
+              <option value="12">Nov</option>
+              <option value="13">Dec</option>
+            </select>
+          </td>
+          <td>
+            <input id="jun_y" type="number" step="1" style="width: 60px;">
+          </td>
+          <td id="jun_w"></td>
+        </tr>
+        <tr>
+          <th style="text-align: right;">Asgardian (without Leap Day):</th>
+          <td>
+            <select id="non_d" style="width: 45px;">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+              <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+              <option>26</option><option>27</option><option>28</option>
+              <option id="non_13" value="29">YD</option>
+            </select>
+          </td>
+          <td>
+            <select id="non_m">
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Asg</option>
+              <option value="8">Jul</option>
+              <option value="9">Aug</option>
+              <option value="10">Sep</option>
+              <option value="11">Oct</option>
+              <option value="12">Nov</option>
+              <option value="13">Dec</option>
+            </select>
+          </td>
+          <td>
+            <input id="non_y" type="number" step="1" style="width: 60px;">
+          </td>
+          <td id="non_w"></td>
+        </tr>
+      </table>
+    </div>
+    <script src="//cdn.research.pdx.edu/almond/0.3.3/almond.js"></script>
+    <script src="demo.js"></script>
+    <script>require("demo/demo");</script>
+    <a href="https://github.com/katemihalikova/asgardia-calendar-converter">
+      <img src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png">
+    </a>
+  </body>
+</html>
