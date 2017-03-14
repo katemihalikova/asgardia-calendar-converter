@@ -1,0 +1,12 @@
+{
+  "include": [
+    "src/**/*",
+    "demo/**/*"
+  ],
+  "compilerOptions": {
+    "outFile": "./out/demo.js",
+    "module": "amd",
+    "noImplicitAny": true,
+    "noImplicitReturns": true
+  }
+}

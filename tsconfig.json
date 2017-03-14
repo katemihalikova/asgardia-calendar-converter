@@ -1,0 +1,13 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "declaration": true,
+    "sourceMap": true
+  }
+}

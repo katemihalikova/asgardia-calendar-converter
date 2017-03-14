@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - lts/*
+script: bash ./.travis/deploy.sh
+env:
+  global:
+    - ENCRYPTION_LABEL: 85b4c7448974
