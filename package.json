@@ -20,7 +20,11 @@
     "tslint": "^4.5.1",
     "typescript": "^2.2.1"
   },
-  "author": "Kate Miháliková <kate@katemihalikova.cz>",
+  "author": {
+    "name": "Kate Miháliková",
+    "email": "kate@katemihalikova.cz",
+    "twitter": "@katemihalikova"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
