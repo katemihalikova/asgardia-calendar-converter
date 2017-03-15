@@ -7,7 +7,7 @@ const tap = require("tap");
 
 const {toAsgardian, toGregorian} = require("../dist/index.js");
 
-tap.test(t => {
+tap.test("Convert between ISO ans Asgardian (using conversion table)", t => {
   const rl = readline.createInterface({
     input: fs.createReadStream(path.join(__dirname, "conversion-table.csv")),
   });
