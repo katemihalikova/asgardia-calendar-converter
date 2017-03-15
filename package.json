@@ -1,6 +1,6 @@
 {
   "name": "asgardia-calendar-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert date between Gregorian and Asgardian calendars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
