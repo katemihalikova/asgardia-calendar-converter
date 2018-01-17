@@ -228,5 +228,5 @@ define("demo/demo", ["require", "exports", "src/index"], function (require, expo
     el.non_m.addEventListener("change", nonChanged, false);
     el.non_d.addEventListener("change", nonChanged, false);
     var now = new Date();
-    changed({ day: now.getDate(), month: now.getMonth(), year: now.getFullYear() });
+    changed({ day: now.getDate(), month: now.getMonth() + 1, year: now.getFullYear() });
 });
