@@ -59,9 +59,9 @@ function changed(gre: Datum) {
   greDate.setFullYear(gre.year);
   el.gre_w.innerText = daysOfWeek[greDate.getDay()];
 
-  el.feb_w.innerText = daysOfWeek[(feb.day - 1) % 7];
-  el.jun_w.innerText = daysOfWeek[(jun.day - 1) % 7];
-  el.non_w.innerText = daysOfWeek[(non.day - 1) % 7];
+  el.feb_w.innerText = daysOfWeek[feb.day % 7];
+  el.jun_w.innerText = daysOfWeek[jun.day % 7];
+  el.non_w.innerText = daysOfWeek[non.day % 7];
 
   if (feb.month === 2 && feb.day === 29) {
     el.feb_w.innerText = "Leap Day";
