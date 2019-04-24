@@ -91,7 +91,7 @@ export function toGregorian({day, month, year}: Datum, mode: "non" | "feb" | "ju
 
   year += 2016;
   month = 1;
-  let daysInMonths = [31, isAsgardianYearLeap(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let daysInMonths = [31, isGregorianYearLeap(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   for (let m = 0; m < 12; m++) {
     if (day > daysInMonths[m]) {
       day -= daysInMonths[m];
