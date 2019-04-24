@@ -92,7 +92,7 @@ define("src/index", ["require", "exports"], function (require, exports) {
         }
         year += 2016;
         month = 1;
-        var daysInMonths = [31, isAsgardianYearLeap(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var daysInMonths = [31, isGregorianYearLeap(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         for (var m = 0; m < 12; m++) {
             if (day > daysInMonths[m]) {
                 day -= daysInMonths[m];
@@ -164,9 +164,9 @@ define("demo/demo", ["require", "exports", "src/index"], function (require, expo
         var greDate = new Date(2000, gre.month - 1, gre.day);
         greDate.setFullYear(gre.year);
         el.gre_w.innerText = daysOfWeek[greDate.getDay()];
-        el.feb_w.innerText = daysOfWeek[(feb.day - 1) % 7];
-        el.jun_w.innerText = daysOfWeek[(jun.day - 1) % 7];
-        el.non_w.innerText = daysOfWeek[(non.day - 1) % 7];
+        el.feb_w.innerText = daysOfWeek[feb.day % 7];
+        el.jun_w.innerText = daysOfWeek[jun.day % 7];
+        el.non_w.innerText = daysOfWeek[non.day % 7];
         if (feb.month === 2 && feb.day === 29) {
             el.feb_w.innerText = "Leap Day";
         }
