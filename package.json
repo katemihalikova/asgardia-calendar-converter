@@ -9,7 +9,7 @@
     "build-demo": "rimraf out/**/* && tsc -p tsconfig.demo.json && copyfiles -f demo/index.html out",
     "test": "tap test/*.js --coverage",
     "watch": "tsc --watch",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"
